@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product-category</title>
@@ -143,7 +144,7 @@ rel="stylesheet"
 
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title">{{}}</h5>
+      <h5 class="card-title">{{product_title }}</h5>
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
       <button type="button" class="btn btn-primary" data-mdb-ripple-init>Button</button>
     </div>
@@ -290,5 +291,23 @@ import { Ripple, initMDB } from "mdb-ui-kit";
 
 initMDB({ Ripple });
 <!-- cards-->
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+
+<!-- Initialization for ES Users -->
+<script>
+    import { Dropdown, Collapse, initMDB } from "mdb-ui-kit";
+    initMDB({ Dropdown, Collapse });
+</script>
+
+<!-- Initialization for Cards -->
+<script>
+    import { Ripple, initMDB } from "mdb-ui-kit";
+    initMDB({ Ripple });
+</script>
+
 </body>
 </html>
