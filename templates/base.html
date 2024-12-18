@@ -142,15 +142,15 @@ rel="stylesheet"
   <!-- Navbar -->
 
 
-  <div class="card">
+  {% for product in products %}
+<div class="card">
     <div class="card-body">
-      <h5 class="card-title">{{product_title }}</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <h5 class="card-title">{{ product.name }}</h5>
+      <p class="card-text">{{ product.description|default:"No description available" }}</p>
       <button type="button" class="btn btn-primary" data-mdb-ripple-init>Button</button>
     </div>
-  </div>
-
-
+</div>
+{% endfor %}
 
   <!-- Footer -->
 <footer class="text-center text-lg-start bg-body-tertiary text-muted">
